@@ -1,3 +1,0 @@
-images/nnn1.jpg
-images/nnn2.jpg
-images/nnn3.jpg
