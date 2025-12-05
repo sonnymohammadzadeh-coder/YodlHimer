@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sierra Cabot Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>Sierra Cabot Gallery</h1>
+</header>
+
+<main class="container">
+  <section class="gallery">
+    <h2>Photos of Sierra Cabot</h2>
+
+    <!-- Add your photos here -->
+    <div class="gallery-grid">
+      <img src="images/sierra1.jpg" onclick="openLightbox(this.src)">
+      <img src="images/sierra2.jpg" onclick="openLightbox(this.src)">
+      <img src="images/sierra3.jpg" onclick="openLightbox(this.src)">
+      <!-- add more as needed -->
+    </div>
+  </section>
+</main>
+
+<!-- lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
