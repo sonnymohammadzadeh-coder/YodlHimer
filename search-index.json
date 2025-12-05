@@ -1,0 +1,8 @@
+{
+  "pages": [
+    { "title": "Home", "url": "index.html" },
+    { "title": "Gallery", "url": "gallery.html" },
+    { "title": "About", "url": "about.html" },
+    { "title": "Contact", "url": "contact.html" }
+  ]
+}
