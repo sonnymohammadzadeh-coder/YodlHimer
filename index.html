@@ -1,44 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to My Website</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>YodlHimer — Calm Pink Aesthetic</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <h1 class="logo">YodlHimer</h1>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+  <!-- LOADING -->
+  <div class="loading" role="status" aria-live="polite">
+    <div class="spinner" aria-hidden="true">
+      <div class="logo-small"><img src="logo.svg" alt="" style="width:44px;height:44px;border-radius:8px"></div>
+    </div>
+  </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2>Welcome to My Pink Aesthetic Website</h2>
-        <p>Calm vibes, soft designs, and gentle energy 🌸</p>
+  <!-- sparkles canvas appended by script -->
 
-        <!-- Search Bar -->
-        <div class="search-container">
-            <input type="text" placeholder="Search the site..." />
-            <button>Search</button>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="brand">
+      <img src="logo.svg" alt="YodlHimer logo">
+      <div>
+        <h1 style="margin:0">YodlHimer</h1>
+        <small>calm • soft • pink</small>
+      </div>
+    </div>
+
+    <button class="mobile-toggle" aria-expanded="false" aria-label="Open menu">☰</button>
+
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-item"><a href="index.html">Home</a></div>
+      <div class="nav-item">
+        <a href="gallery.html">Gallery ▾</a>
+        <div class="dropdown">
+          <a href="gallery.html">All images</a>
+          <a href="gallery.html#featured">Featured</a>
+          <a href="gallery.html#portraits">Portraits</a>
         </div>
+      </div>
+      <div class="nav-item"><a href="about.html">About</a></div>
+      <div class="nav-item"><a href="contact.html">Contact</a></div>
+      <a class="cta" href="gallery.html">View Gallery</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main style="width:90%;max-width:1100px;margin:8px auto 28px;">
+
+    <!-- HERO / SLIDESHOW -->
+    <section class="container hero">
+      <div class="slide-wrap">
+        <div class="slides">
+          <div class="slide active">
+            <div class="left">
+              <div class="kicker">new</div>
+              <h2 class="title">A calm pink space to show your world.</h2>
+              <p class="lead">Soft gradients, subtle motion, and an easy structure to grow your site.</p>
+
+              <div class="search-inline" style="margin-top:14px">
+                <input id="site-search-input" type="search" placeholder="Search the site (Ctrl+K or /)"/>
+                <button id="site-search-btn">Search</button>
+              </div>
+
+            </div>
+            <div style="width:38%;display:flex;align-items:center;justify-content:center">
+              <div style="width:100%;border-radius:12px;overflow:hidden;box-shadow:0 12px 36px rgba(80,30,60,0.06)">
+                <img src="https://picsum.photos/seed/a/800/520" alt="hero" style="width:100%;display:block;object-fit:cover">
+              </div>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="left">
+              <div class="kicker">featured</div>
+              <h2 class="title">Showcase your best works with style.</h2>
+              <p class="lead">Slideshow header, animated details, and a gallery that opens images large.</p>
+            </div>
+            <div style="width:38%;display:flex;align-items:center;justify-content:center">
+              <div style="width:100%;border-radius:12px;overflow:hidden">
+                <img src="https://picsum.photos/seed/b/800/520" alt="slide2" style="width:100%;display:block;object-fit:cover">
+              </div>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="left">
+              <div class="kicker">gentle</div>
+              <h2 class="title">Everything tuned to keep a calm vibe.</h2>
+              <p class="lead">Particles, soft shadows, and a soothing color palette.</p>
+            </div>
+            <div style="width:38%;display:flex;align-items:center;justify-content:center">
+              <div style="width:100%;border-radius:12px;overflow:hidden">
+                <img src="https://picsum.photos/seed/c/800/520" alt="slide3" style="width:100%;display:block;object-fit:cover">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-controls" aria-hidden="true"></div>
+      </div>
     </section>
 
-    <!-- Featured Boxes -->
-    <section class="features">
-        <div class="feature-box">
-            <h3>🌸 Latest Update</h3>
-            <p>Check out the newest features added to the site!</p>
-        </div>
+    <!-- SEARCH RESULTS -->
+    <div id="search-results" style="width:90%;max-width:var(--maxw);margin:14px auto"></div>
 
-        <div class="feature-box">
-            <h3>✨ Aesthetic Gallery</h3>
-            <p>Browse cute images, designs, and soft visuals.</p
+    <!-- FEATURE GRID -->
+    <section class="container" style="margin-top:18px">
+      <div class="grid">
+        <div class="card fade-up">
+          <h3>✨ Smooth scrolling</h3>
+          <p>Sections animate into view as you scroll.</p>
+        </div>
+        <div class="card fade-up">
+          <h3>♡ Cute icons</h3>
+          <p>Little inline SVG icons to add charm.</p>
+        </div>
+        <div class="card fade-up">
+          <h3>🔎 Site search</h3>
+          <p>Search the site from anywhere — client-side and privacy friendly.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY PREVIEW -->
+    <section class="container" style="margin-top:18px">
+      <h3 class="fade-up">Gallery preview</h3>
+      <div class="gallery-grid fade-up" style="margin-top:12px">
+        <div class="gallery-item"><img src="https://picsum.photos/id/1015/600/400" data-large="https://picsum.photos/id/1015/1200/800" alt="S1"></div>
+        <div class="gallery-item"><img src="https://picsum.photos/id/1016/600/400" data-large="https://picsum.photos/id/1016/1200/800" alt="S2"></div>
+        <div class="gallery-item"><img src="https://picsum.photos/id/1025/600/400" data-large="https://picsum.photos/id/1025/1200/800" alt="S3"></div>
+        <div class="gallery-item"><img src="https://picsum.photos/id/1021/600/400" data-large="https://picsum.photos/id/1021/1200/800" alt="S4"></div>
+      </div>
+      <div style="text-align:center;margin-top:16px">
+        <a class="btn cta" href="gallery.html">Browse full gallery</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <img id="lightbox-img" src="" alt="Large view">
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div style="display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:8px"><img src="logo.svg" alt="" style="width:36px;height:36px;border-radius:8px"><strong>YodlHimer</strong></div>
+      <div style="color:#9a6f85">soft pink vibes · calm & slow</div>
+      <div>© <span id="year"></span></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
