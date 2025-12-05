@@ -174,3 +174,24 @@ function initSearch(){
   style.innerHTML = '@keyframes spin{to{transform:rotate(360deg)}}';
   document.head.appendChild(style);
 })();
+// Simple page text search
+document.getElementById("site-search-btn").addEventListener("click", performSearch);
+document.getElementById("site-search-input").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") performSearch();
+});
+
+function performSearch() {
+    const query = document.getElementById("site-search-input").value.toLowerCase();
+    const resultsContainer = document.getElementById("search-results");
+    resultsContainer.innerHTML = ""; // clear old results
+
+    if (!query) return;
+
+    const text = document.body.innerText.toLowerCase();
+    const count = text.split(query).length - 1;
+
+    resultsContainer.innerHTML =
+        `<div style="padding:12px;background:#ffddec;border-radius:8px">
+            Found <strong>${count}</strong> occurrences of “${query}”.
+        </div>`;
+}
