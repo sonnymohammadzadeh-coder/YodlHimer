@@ -1,0 +1,97 @@
+/* Pink Gradient Background */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ffd4e5, #ffb3d1);
+    color: #6c2a4b;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 240, 245, 0.6);
+    backdrop-filter: blur(3px);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #6c2a4b;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #ff4f9e;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    animation: fadeIn 1.5s ease;
+}
+
+.search-container {
+    margin-top: 20px;
+}
+
+.search-container input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    background: #ff4f9e;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-container button:hover {
+    background: #ff1f80;
+}
+
+/* Feature Boxes */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+    flex-wrap: wrap;
+}
+
+.feature-box {
+    background: #ffe3f0;
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(255, 100, 150, 0.3);
+    transition: transform 0.3s;
+}
+
+.feature-box:hover {
+    transform: scale(1.05);
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
