@@ -174,24 +174,37 @@ function initSearch(){
   style.innerHTML = '@keyframes spin{to{transform:rotate(360deg)}}';
   document.head.appendChild(style);
 })();
-// Simple page text search
-document.getElementById("site-search-btn").addEventListener("click", performSearch);
-document.getElementById("site-search-input").addEventListener("keydown", function (e) {
-    if (e.key === "Enter") performSearch();
-});
-
-function performSearch() {
+async function performSearch() {
     const query = document.getElementById("site-search-input").value.toLowerCase();
     const resultsContainer = document.getElementById("search-results");
-    resultsContainer.innerHTML = ""; // clear old results
+    resultsContainer.innerHTML = "";
 
     if (!query) return;
 
-    const text = document.body.innerText.toLowerCase();
-    const count = text.split(query).length - 1;
+    const res = await fetch("search-index.json");
+    const data = await res.json();
 
-    resultsContainer.innerHTML =
-        `<div style="padding:12px;background:#ffddec;border-radius:8px">
-            Found <strong>${count}</strong> occurrences of “${query}”.
-        </div>`;
+    let resultsHTML = "";
+
+    for (const page of data.pages) {
+        const pageRes = await fetch(page.url);
+        const text = await pageRes.text();
+        const clean = text.replace(/<[^>]*>/g, " ").toLowerCase();
+
+        if (clean.includes(query)) {
+            resultsHTML += `
+                <div class="card fade-up" style="margin:10px 0">
+                    <a href="${page.url}"><strong>${page.title}</strong></a><br>
+                    Contains: “${query}”
+                </div>`;
+        }
+    }
+
+    if (!resultsHTML) {
+        resultsHTML = `<p>No results found for “${query}”.</p>`;
+    }
+
+    resultsContainer.innerHTML = resultsHTML;
 }
+
+document.getElementById("site-search-btn").addEventListener("click", performSearch);
